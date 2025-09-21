@@ -1,94 +1,80 @@
 VAYURAKSHAK: AI-Powered Autonomous Drone for Precision Weed Management
 Sowing the Future, Weeding with Precision
 
-
 📌 Project Overview
-VAYURAKSHAK is an autonomous quadcopter drone designed for precision weed management in agriculture. It uses artificial intelligence (AI) and computer vision to detect, map, and spray weeds with high accuracy, significantly reducing herbicide usage and labor costs while promoting sustainable farming practices.
+Autonomous drone for precision weed management using AI and computer vision.
 
 
 🎯 Problem Statement
-Modern agriculture faces significant challenges in weed management:
+Labor Intensity: 50-60 labor days per acre
 
-Labor Intensity: Manual weeding requires 50–60 labor days per acre.
+Inefficient Spraying: Wastes 70%+ herbicides
 
-Inefficient Spraying: Traditional methods waste over 70% of herbicides.
+Environmental Harm: Chemical runoff and pollution
 
-Environmental Harm: Chemical runoff pollutes soil and water, and leads to herbicide-resistant weeds.
-
-Accessibility Issues: Large machinery cannot operate in small, irregular, or water-logged fields.
-
+Accessibility Issues: Large equipment can't reach difficult terrain
 
 💡 Our Solution
-VAYURAKSHAK is an end-to-end autonomous system that:
+Autonomous quadcopter that:
 
-Sees: Uses a high-resolution camera to scan the field.
+Sees: High-res camera scanning
 
-Maps: AI identifies weeds and logs their GPS coordinates.
+Maps: AI weed detection + GPS tagging
 
-Sprays: Triggers micro-sprayers to apply herbicide only on detected weeds.
-
-
+Sprays: Micro-sprayers target only weeds
 
 ✨ Key Features
-Precision Spraying: Reduces herbicide usage by 80–90%.
+Precision: 80-90% herbicide reduction
 
-High Efficiency: Covers large areas 5x faster than manual labor.
+Efficiency: 5x faster than manual labor
 
-Terrain Accessibility: Operates in any field condition.
+Accessibility: Reaches any terrain
 
-Data Intelligence: Generates weed maps for future farm planning.
-
-
+Data Intelligence: Generates weed maps
 
 🛠️ System Architecture
-The system consists of the following modules:
+Field Monitoring - Image capture
 
-Field Monitoring: IoT camera/drone for image capture.
+Navigation - GPS flight path
 
-Navigation: GPS module for autonomous flight path planning.
+Core Controller - Raspberry Pi + TensorFlow Lite
 
-Core Controller: Raspberry Pi 4/5 running TensorFlow Lite for real-time AI inference.
+AI Vision - CNN weed detection
 
-AI Vision: CNN-based weed vs. crop detection.
+GPS Mapping - Coordinate logging
 
-GPS Mapping: Logs weed coordinates and creates geotagged maps.
+Action Command - Spray triggering
 
-Action Command: Triggers spray mechanism.
+Precision Spray - Micro-droplet nozzles
 
-Precision Spray: Uses solenoid valve nozzles for targeted micro-droplet spraying.
-
-Data Analytics: Uploads weed maps to cloud/server for analytics and dashboards.
-
-
+Data Analytics - Cloud upload & dashboard
 
 🔬 Technical Innovation
-Edge-AI on Raspberry Pi: Real-time weed detection using TensorFlow Lite without internet dependency.
+Edge-AI on Raspberry Pi - Real-time processing
 
-Custom Micro-Spraying Mechanism: Proprietary nozzle system for precise herbicide application.
+Custom Micro-Spraying - Precise herbicide application
 
-Automated Geotagging & Mapping: Creates detailed weed location maps for future farm management.
+Automated Geotagging - Weed mapping
 
-End-to-End Automation: Autonomous takeoff, flight, processing, and spraying.
+End-to-End Automation - Minimal human intervention
 
-Cost-Effective Design: Affordable and accessible for small to medium farmers.
-
-
+Cost-Effective Design - Affordable for farmers
 
 📊 Expected Impact
 Economic
 80% reduction in weeding costs
 
-90% savings on herbicide expenditure
+90% herbicide savings
 
 Environmental
-Reduced chemical load in soil and water
+Reduced chemical load
 
-Promotion of sustainable farming
+Sustainable farming
 
 Social
-Reduced labor dependency
+Less labor dependency
 
-Creation of tech-enabled rural jobs (e.g., drone operators, data analysts)
+New rural tech jobs
 
 👥 Team Members
 Salma Kousar
@@ -101,18 +87,16 @@ Mohammed Junaid Ahmed
 
 Problem Statement Code: SHH25097
 
-
-
 🚀 Future Scope
-Integration with farm management software
+Farm management software integration
 
-Multi-drone swarming for large fields
+Multi-drone swarming
 
-Support for organic herbicide spraying
+Organic herbicide support
 
-Expansion to other crop management tasks (e.g., pest detection, irrigation monitoring)
+Pest detection and irrigation monitoring
 
+VAYURAKSHAK — Empowering farmers with AI for a greener tomorrow.
 
-VAYURAKSHAK — Empowering farmers with AI and autonomy for a greener tomorrow.
 
 
