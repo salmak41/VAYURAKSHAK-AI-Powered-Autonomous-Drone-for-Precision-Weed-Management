@@ -1,95 +1,170 @@
-VAYURAKSHAK
-AI-Powered Autonomous Drone
-Precision weed management system using AI and computer vision
 
-Key Features:
 
-✅ Real-time weed detection
+# 🌿 VAYURAKSHAK
+### AI-Powered Autonomous Drone  
+*Precision Weed Management System using AI and Computer Vision*
 
-✅ GPS mapping
+---
 
-✅ Precision spraying (80-90% herbicide reduction)
+## 📚 Table of Contents
+- [Key Features](#-key-features)
+- [Problem Statement](#-problem-statement)
+- [Our Solution](#-our-solution)
+- [System Architecture](#-system-architecture)
+- [Technical Innovation](#-technical-innovation)
+- [Expected Impact](#-expected-impact)
+- [Team Members](#-team-members)
+- [Future Scope](#-future-scope)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Contact](#-contact)
 
-✅ 5x faster than manual labor
+---
 
-✅ Reaches any terrain
+## ✨ Key Features  
+- ✅ *Real-time weed detection*  
+- ✅ *GPS mapping*  
+- ✅ *Precision spraying (80–90% herbicide reduction)*  
+- ✅ *5× faster than manual labor*  
+- ✅ *Reaches any terrain*  
+- ✅ *Generates weed maps for future planning*
 
-✅ Generates weed maps for future planning
-
+```bash
 pip install vayurakshak
 
-🎯 Problem Statement
-Key Challenges:
 
-⚠️ Labor Intensity: 50-60 labor days per acre
+---
 
-⚠️ Inefficient Spraying: Wastes 70%+ herbicides
+## 🎯 Problem Statement
 
-⚠️ Environmental Harm: Chemical runoff and pollution
+⚠ Key Challenges
 
-⚠️ Accessibility Issues: Large equipment can't reach difficult terrain
+Labor Intensity: 50–60 labor days per acre.
+
+Inefficient Spraying: Traditional methods waste 70%+ of herbicides.
+
+Environmental Harm: Chemical runoff, pollution, and contamination of nearby water sources.
+
+Accessibility Issues: Large machinery cannot access uneven, terraced, or rocky terrain.
+
+
+
+---
 
 💡 Our Solution
-Autonomous quadcopter that:
 
-👁️ Sees: High-res camera scanning
+An autonomous quadcopter system designed for precision weed management:
 
-🗺️ Maps: AI weed detection + GPS tagging
+👁 Sees: High-resolution camera scans the field in real-time.
 
-💦 Sprays: Micro-sprayers target only weeds
+🗺 Maps: On-device AI detects weeds and geotags them via GPS.
 
-🛠️ System Architecture
-Core Components:
+💦 Sprays: Micro-droplet nozzles deliver herbicide only to detected weeds, drastically reducing usage.
 
-Field Monitoring - Image capture
 
-Navigation - GPS flight path
+Key outcomes: minimal human supervision, reduced chemical usage, faster operations, and precise weed maps for planning.
 
-Core Controller - Raspberry Pi + TensorFlow Lite
 
-AI Vision - CNN weed detection
+---
 
-GPS Mapping - Coordinate logging
+🛠 System Architecture
 
-Action Command - Spray triggering
+1. Field Monitoring
 
-Precision Spray - Micro-droplet nozzles
+High-res camera or drone-mounted imaging system captures field images or video.
 
-Data Analytics - Cloud upload & dashboard
+
+
+2. Navigation
+
+GPS-based flight planning and waypoint navigation for full field coverage.
+
+
+
+3. Core Controller
+
+Raspberry Pi (or equivalent SBC) running the control loop and TensorFlow Lite models.
+
+
+
+4. AI Vision
+
+CNN model for weed vs. crop classification running on edge (TFLite).
+
+
+
+5. GPS Mapping
+
+Each detection is geotagged and stored for later visualization (weed density maps).
+
+
+
+6. Action Command
+
+Real-time command module triggers micro-sprayers when the drone is over a detected weed.
+
+
+
+7. Precision Spray
+
+Micro-droplet nozzles that spray small targeted bursts to minimize herbicide.
+
+
+
+8. Data Analytics
+
+Optional cloud upload for dashboard visualization, trend analysis, and record keeping.
+
+
+
+
+
+---
 
 🔬 Technical Innovation
-Breakthrough Features:
 
-Edge-AI on Raspberry Pi - Real-time processing
+🚀 Edge-AI on Raspberry Pi: Run optimized TFLite models on-board for low-latency inference.
 
-Custom Micro-Spraying - Precise herbicide application
+💦 Custom Micro-Spraying: Hardware-level nozzle control for spot-spraying weeds only.
 
-Automated Geotagging - Weed mapping
+📍 Automated Geotagging: Generate accurate weed maps for future planning and variable-rate application.
 
-End-to-End Automation - Minimal human intervention
+🤖 End-to-End Automation: From image capture → detection → spray actuation → mapping with minimal human input.
 
-Cost-Effective Design - Affordable for farmers
+💰 Cost-Effective Design: Built using affordable components to keep the solution accessible to smallholder farmers.
+
+
+
+---
 
 📊 Expected Impact
-Economic:
 
-💰 80% reduction in weeding costs
+💰 Economic
 
-💰 90% herbicide savings
+Up to 80% reduction in weeding labor costs.
 
-Environmental:
+Up to 90% reduction in herbicide usage compared to conventional blanket spraying.
 
-🌱 Reduced chemical load
 
-🌱 Sustainable farming
+🌱 Environmental
 
-Social:
+Reduced chemical runoff and lower environmental contamination.
 
-👨‍🌾 Less labor dependency
+Supports sustainable agriculture and healthier soils.
 
-👨‍💼 New rural tech jobs
+
+👥 Social
+
+Reduces repetitive labor burden.
+
+Creates new rural technical jobs (drone operators, maintenance, data analysts).
+
+
+
+---
 
 👥 Team Members
+
 Salma Kousar
 
 Vaishnavi Chauhan
@@ -98,15 +173,103 @@ Mohammed Junaid Ahmed
 
 Mohammed Junaid Ahmed
 
+
 Problem Statement Code: SHH25097
 
+
+---
+
 🚀 Future Scope
-Farm management software integration
 
-Multi-drone swarming
+Integrate with farm management software (FMS) and precision agriculture platforms.
 
-Organic herbicide support
+Multi-drone swarming for faster coverage of large farms.
 
-Pest detection and irrigation monitoring
+Support for organic herbicide or biological controls.
 
-Built with ❤️ for sustainable agriculture
+Expand vision models to detect pests, nutrient deficiency, and irrigation issues.
+
+Add variable-rate application capability based on weed density maps.
+
+
+
+---
+
+⚙ Installation
+
+Prerequisites (example):
+
+Raspberry Pi 4 or similar SBC
+
+Drone/flight controller compatible with companion computer (e.g., ArduPilot or PX4)
+
+Camera module (Raspberry Pi camera or higher-res USB camera)
+
+GPS module
+
+Micro-sprayer hardware + solenoid valves
+
+Python 3.8+
+
+TensorFlow Lite runtime
+
+
+Install Python package (if published):
+
+pip install vayurakshak
+---
+
+▶ Usage (high-level)
+
+1. Train or use a pre-trained TFLite weed-detection model.
+
+
+2. Upload the model to the Raspberry Pi (or onboard device).
+
+
+3. Calibrate the drone camera and GPS.
+
+
+4. Configure flight waypoints and spray parameters.
+
+
+5. Run the main control script to start field scanning, detection, and precision spraying.
+
+
+
+Example command (script name may vary):
+
+python main.py --mode auto --model models/weed_detector.tflite --waypoints wp.json
+
+
+---
+
+📁 File Structure (example)
+
+vayurakshak/
+├─ models/
+│  └─ weed_detector.tflite
+├─ scripts/
+│  ├─ main.py
+│  ├─ navigation.py
+│  └─ sprayer_control.py
+├─ config/
+│  └─ wp.json
+├─ data/
+│  └─ detections.csv
+├─ README.md
+└─ requirements.txt
+
+
+---
+
+🧾 Notes & Safety
+
+Test in a controlled environment before field deployment.
+
+Follow local regulations for drone flights and pesticide usage.
+
+Ensure herbicides used are approved and applied according to label instructions.
+
+Implement emergency stop and fail-safe behaviors in navigation and spraying modules.
+
