@@ -1,38 +1,46 @@
-VAYURAKSHAK: AI-Powered Autonomous Drone for Precision Weed Management
-Sowing the Future, Weeding with Precision
+VAYURAKSHAK
+AI-Powered Autonomous Drone
+Precision weed management system using AI and computer vision
 
-📌 Project Overview
-Autonomous drone for precision weed management using AI and computer vision.
+Key Features:
 
+✅ Real-time weed detection
+
+✅ GPS mapping
+
+✅ Precision spraying (80-90% herbicide reduction)
+
+✅ 5x faster than manual labor
+
+✅ Reaches any terrain
+
+✅ Generates weed maps for future planning
+
+pip install vayurakshak
 
 🎯 Problem Statement
-Labor Intensity: 50-60 labor days per acre
+Key Challenges:
 
-Inefficient Spraying: Wastes 70%+ herbicides
+⚠️ Labor Intensity: 50-60 labor days per acre
 
-Environmental Harm: Chemical runoff and pollution
+⚠️ Inefficient Spraying: Wastes 70%+ herbicides
 
-Accessibility Issues: Large equipment can't reach difficult terrain
+⚠️ Environmental Harm: Chemical runoff and pollution
+
+⚠️ Accessibility Issues: Large equipment can't reach difficult terrain
 
 💡 Our Solution
 Autonomous quadcopter that:
 
-Sees: High-res camera scanning
+👁️ Sees: High-res camera scanning
 
-Maps: AI weed detection + GPS tagging
+🗺️ Maps: AI weed detection + GPS tagging
 
-Sprays: Micro-sprayers target only weeds
-
-✨ Key Features
-Precision: 80-90% herbicide reduction
-
-Efficiency: 5x faster than manual labor
-
-Accessibility: Reaches any terrain
-
-Data Intelligence: Generates weed maps
+💦 Sprays: Micro-sprayers target only weeds
 
 🛠️ System Architecture
+Core Components:
+
 Field Monitoring - Image capture
 
 Navigation - GPS flight path
@@ -50,6 +58,8 @@ Precision Spray - Micro-droplet nozzles
 Data Analytics - Cloud upload & dashboard
 
 🔬 Technical Innovation
+Breakthrough Features:
+
 Edge-AI on Raspberry Pi - Real-time processing
 
 Custom Micro-Spraying - Precise herbicide application
@@ -61,20 +71,23 @@ End-to-End Automation - Minimal human intervention
 Cost-Effective Design - Affordable for farmers
 
 📊 Expected Impact
-Economic
-80% reduction in weeding costs
+Economic:
 
-90% herbicide savings
+💰 80% reduction in weeding costs
 
-Environmental
-Reduced chemical load
+💰 90% herbicide savings
 
-Sustainable farming
+Environmental:
 
-Social
-Less labor dependency
+🌱 Reduced chemical load
 
-New rural tech jobs
+🌱 Sustainable farming
+
+Social:
+
+👨‍🌾 Less labor dependency
+
+👨‍💼 New rural tech jobs
 
 👥 Team Members
 Salma Kousar
@@ -96,7 +109,4 @@ Organic herbicide support
 
 Pest detection and irrigation monitoring
 
-VAYURAKSHAK — Empowering farmers with AI for a greener tomorrow.
-
-
-
+Built with ❤️ for sustainable agriculture
