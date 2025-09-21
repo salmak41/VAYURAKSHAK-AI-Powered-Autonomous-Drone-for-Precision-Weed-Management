@@ -14,7 +14,7 @@
 - [Technical Innovation](#-technical-innovation)
 - [Expected Impact](#-expected-impact)
 - [Team Members](#-team-members)
-- [Future Scope](#-future-scope)
+
 
 
 ---
@@ -137,33 +137,4 @@ Creates new rural jobs in agri-tech and drone operation.
 
 
 ---
-
-## 🚀 Future Scope
-
-🔗 Integration with farm management software for advanced planning.
-
-🤝 Multi-drone swarming for large-scale coverage.
-
-🌱 Support for organic herbicides and biological pest control.
-
-🐛 Pest detection & soil health monitoring using AI models.
-
-📊 Variable-rate spraying based on weed density analysis.
-
-
----
-## 🧾 Notes & Safety
-
-Test in a controlled environment before field deployment.
-
-Follow local regulations for drone flights and pesticide usage.
-
-Ensure herbicides used are approved and applied according to label instructions.
-
-Implement emergency stop and fail-safe behaviors in navigation and spraying modules.
-
-
-
-
-
 
