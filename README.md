@@ -1,8 +1,10 @@
 VAYURAKSHAK: AI-Powered Autonomous Drone for Precision Weed Management
 Sowing the Future, Weeding with Precision
 
+
 📌 Project Overview
 VAYURAKSHAK is an autonomous quadcopter drone designed for precision weed management in agriculture. It uses artificial intelligence (AI) and computer vision to detect, map, and spray weeds with high accuracy, significantly reducing herbicide usage and labor costs while promoting sustainable farming practices.
+
 
 🎯 Problem Statement
 Modern agriculture faces significant challenges in weed management:
@@ -15,6 +17,7 @@ Environmental Harm: Chemical runoff pollutes soil and water, and leads to herbic
 
 Accessibility Issues: Large machinery cannot operate in small, irregular, or water-logged fields.
 
+
 💡 Our Solution
 VAYURAKSHAK is an end-to-end autonomous system that:
 
@@ -24,6 +27,8 @@ Maps: AI identifies weeds and logs their GPS coordinates.
 
 Sprays: Triggers micro-sprayers to apply herbicide only on detected weeds.
 
+
+
 ✨ Key Features
 Precision Spraying: Reduces herbicide usage by 80–90%.
 
@@ -32,6 +37,8 @@ High Efficiency: Covers large areas 5x faster than manual labor.
 Terrain Accessibility: Operates in any field condition.
 
 Data Intelligence: Generates weed maps for future farm planning.
+
+
 
 🛠️ System Architecture
 The system consists of the following modules:
@@ -52,6 +59,8 @@ Precision Spray: Uses solenoid valve nozzles for targeted micro-droplet spraying
 
 Data Analytics: Uploads weed maps to cloud/server for analytics and dashboards.
 
+
+
 🔬 Technical Innovation
 Edge-AI on Raspberry Pi: Real-time weed detection using TensorFlow Lite without internet dependency.
 
@@ -62,6 +71,8 @@ Automated Geotagging & Mapping: Creates detailed weed location maps for future f
 End-to-End Automation: Autonomous takeoff, flight, processing, and spraying.
 
 Cost-Effective Design: Affordable and accessible for small to medium farmers.
+
+
 
 📊 Expected Impact
 Economic
@@ -90,6 +101,8 @@ Mohammed Junaid Ahmed
 
 Problem Statement Code: SHH25097
 
+
+
 🚀 Future Scope
 Integration with farm management software
 
@@ -99,8 +112,6 @@ Support for organic herbicide spraying
 
 Expansion to other crop management tasks (e.g., pest detection, irrigation monitoring)
 
-📞 Contact
-For more information, collaboration, or queries, please reach out to the team via GitHub or email.
 
 VAYURAKSHAK — Empowering farmers with AI and autonomy for a greener tomorrow.
 
