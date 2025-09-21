@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAYURAKSHAK - AI Precision Agriculture Drone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2E8B57;
+            --secondary: #3CB371;
+            --accent: #FFA500;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --text: #333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,218.7C672,224,768,160,864,138.7C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: bottom;
+            opacity: 0.2;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        .problem-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .problem-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .problem-icon {
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .solution-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .drone-img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            margin: 30px 0;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            padding: 25px;
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .architecture {
+            background: var(--light);
+            padding: 60px 0;
+        }
+        
+        .arch-image {
+            width: 100%;
+            max-width: 900px;
+            display: block;
+            margin: 30px auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .flowchart {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            margin: 40px auto;
+            max-width: 1000px;
+        }
+        
+        .flow-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding: 15px;
+            border-radius: 8px;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+        
+        .flow-step:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .step-number {
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .step-content h3 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .step-content ul {
+            padding-left: 20px;
+        }
+        
+        .step-content li {
+            margin-bottom: 5px;
+        }
+        
+        .innovation-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .innovation-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .innovation-number {
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .impact-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .impact-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .impact-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            padding: 20px;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .member-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto 20px;
+        }
+        
+        .member-info h3 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .member-role {
+            color: var(--secondary);
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 60px 0 40px;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .problem-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .problem-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .innovation-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .innovation-number {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .flow-step {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">VAYURAKSHAK</div>
+            <p class="tagline">AI-Powered Autonomous Drone for Precision Weed Management</p>
+            <p>Sowing the Future, Weeding with Precision</p>
+            <a href="#solution" class="btn">Discover Our Solution</a>
+        </div>
+    </header>
+
+    <!-- Problem Section -->
+    <section id="problem">
+        <div class="container">
+            <h2>The Challenge of Modern Weeding</h2>
+            <div class="problem-container">
+                <div class="problem-item">
+                    <div class="problem-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <div>
+                        <h3>Labor Intensity & Cost</h3>
+                        <p>Manual weeding is incredibly time-consuming and expensive, often requiring 50-60 labor days per acre.</p>
+                    </div>
+                </div>
+                
+                <div class="problem-item">
+                    <div class="problem-icon">
+                        <i class="fas fa-spray-can"></i>
+                    </div>
+                    <div>
+                        <h3>Inefficiency of Broadcast Spraying</h3>
+                        <p>Traditional tractor-mounted sprayers waste over 70% of herbicides, applying them indiscriminately on both crops and soil.</p>
+                    </div>
+                </div>
+                
+                <div class="problem-item">
+                    <div class="problem-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <div>
+                        <h3>Environmental Damage</h3>
+                        <p>Chemical runoff pollutes soil and water tables, harms biodiversity, and leads to herbicide-resistant "superweeds."</p>
+                    </div>
+                </div>
+                
+                <div class="problem-item">
+                    <div class="problem-icon">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <div>
+                        <h3>Accessibility Issues</h3>
+                        <p>Large equipment cannot easily access small, irregular, or water-logged fields, which are common in Indian agriculture.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution">
+        <div class="container">
+            <h2>Our Innovative Solution</h2>
+            <div class="solution-content">
+                <p>VAYURAKSHAK is an autonomous quadcopter drone that acts as a precise, flying weed-killing machine. Our system combines AI, GPS, and robotics to perform selective weed spraying while significantly reducing chemical use.</p>
+                
+                <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Agricultural Drone" class="drone-img">
+                
+                <h3>Core Function: See, Map, and Spray</h3>
+                
+                <div class="features">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h3>See</h3>
+                        <p>Uses a high-resolution camera to scan the field and identify weeds with computer vision.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h3>Map</h3>
+                        <p>AI identifies weeds and GPS tags their location for precise targeting and future analysis.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-spray-can"></i>
+                        </div>
+                        <h3>Spray</h3>
+                        <p>Triggers micro-sprayers to apply herbicide only on the weeds, reducing chemical use by 80-90%.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section class="architecture">
+        <div class="container">
+            <h2>System Architecture</h2>
+            <p>Our system is built on a robust workflow that integrates cutting-edge technology for precision agriculture:</p>
+            
+            <div class="flowchart">
+                <div class="flow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Field Monitoring</h3>
+                        <ul>
+                            <li>IoT Camera/Drone</li>
+                            <li>Image Capture</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="flow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Navigation</h3>
+                        <ul>
+                            <li>GPS Module</li>
+                            <li>Flight Path</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="flow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Core Controller</h3>
+                        <ul>
+                            <li>Raspberry Pi 4/5</li>
+                            <li>Runs AI Model (TensorLite)</li>
+                            <li>Processes Images in Real-time</li>
+                            <li>Fuses GPS + Vision Data</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="flow-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>AI Vision</h3>
+                        <ul>
+                            <li>Weed vs. Crop Detection</li>
+                            <li>CNN Model</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="flow-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>GPS Mapping</h3>
+                        <ul>
+                            <li>Logs weed Coordinates</li>
+                            <li>Creates Map</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="flow-step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h3>Action Command</h3>
+                        <ul>
+                            <li>Trigger Drone Mechanism</li>
+                            <li>Control</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="flow-step">
+                    <div class="step-number">7</div>
+                    <div class="step-content">
+                        <h3>Precision Spray</h3>
+                        <ul>
+                            <li>Targeted Micro-droplets</li>
+                            <li>Solenoid Valve Nozzles</li>
+                            <li>90% Chemical reduction</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="flow-step">
+                    <div class="step-number">8</div>
+                    <div class="step-content">
+                        <h3>Data Analytics</h3>
+                        <ul>
+                            <li>Uploads Weed Map to Cloud/Server</li>
+                            <li>Analytics Dashboard</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="flow-step" style="justify-content: center; background: #e9f5e9;">
+                    <div class="step-content">
+                        <h3 style="text-align: center;">Repeat Process</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Innovation Section -->
+    <section id="innovation">
+        <div class="container">
+            <h2>Technical Innovation</h2>
+            <div class="innovation-content">
+                <div class="innovation-item">
+                    <div class="innovation-number">1</div>
+                    <div>
+                        <h3>Edge-AI on Raspberry Pi</h3>
+                        <p>We run an optimized Convolutional Neural Network (CNN) directly on the Raspberry Pi using TensorFlow Lite, enabling real-time weed detection without any internet connection.</p>
+                    </div>
+                </div>
+                
+                <div class="innovation-item">
+                    <div class="innovation-number">2</div>
+                    <div>
+                        <h3>Custom Micro-Spraying Mechanism</h3>
+                        <p>Our proprietary nozzle and pump system delivers herbicide in precise micro-droplets only onto the leaves of identified weeds, minimizing drift and waste.</p>
+                    </div>
+                </div>
+                
+                <div class="innovation-item">
+                    <div class="innovation-number">3</div>
+                    <div>
+                        <h3>Automated Geotagging & Mapping</h3>
+                        <p>The system doesn't just spray; it creates a detailed GPS map of weed locations, providing farmers with valuable data for future decision-making.</p>
+                    </div>
+                </div>
+                
+                <div class="innovation-item">
+                    <div class="innovation-number">4</div>
+                    <div>
+                        <h3>End-to-End Automation</h3>
+                        <p>From autonomous takeoff and flight based on pre-mapped coordinates to real-time processing and spraying, the system requires minimal human intervention.</p>
+                    </div>
+                </div>
+                
+                <div class="innovation-item">
+                    <div class="innovation-number">5</div>
+                    <div>
+                        <h3>Cost-Effective Platform</h3>
+                        <p>By leveraging the Raspberry Pi ecosystem and efficient design, we keep the solution affordable and accessible for the average Indian farmer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact">
+        <div class="container">
+            <h2>Expected Impact</h2>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <h3>Economic Impact</h3>
+                    <p>~80% Reduction in weeding costs for farmers. ~90% Savings on herbicide expenditure.</p>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Environmental Impact</h3>
+                    <p>Dramatic reduction in chemical load in the environment. Promotes sustainable farming practices.</p>
+                </div>
+                
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Social Impact</h3>
+                    <p>Makes farming more profitable and less labor-intensive. Creates new tech-enabled job roles in rural areas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team">
+        <div class="container">
+            <h2>Our Team</h2>
+            <p class="tagline">Smart India Hackathon 2025 - Team VAYURAKSHAK</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3>Salma Kousar</h3>
+                        <p class="member-role">AI & Computer Vision Specialist</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3>Vaishnavi Chauhan</h3>
+                        <p class="member-role">Project Lead & Robotics Engineer</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3>Mohammed Junaid Ahmed</h3>
+                        <p class="member-role">Embedded Systems & Hardware</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="member-info">
+                        <h3>Mohammed Junaid Ahmed</h3>
+                        <p class="member-role">Software Development & Integration</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">VAYURAKSHAK</div>
+                <p>AI-Powered Autonomous Drone for Precision Weed Management</p>
+                
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+                
+                <p>© 2025 Team VAYURAKSHAK. Developed for Smart India Hackathon 2025.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
